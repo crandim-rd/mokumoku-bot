@@ -1,0 +1,10 @@
+[project]
+name = "mokumoku-bot"
+version = "0.1.0"
+description = "定期的にoViceからユーザの状態を取得し入退室状況をSlackに通知するボット"
+authors = [
+    { name = "kouji_nakamura", email = "41434466+7crabs@users.noreply.github.com" }
+]
+dependencies = []
+readme = "README.md"
+requires-python = ">= 3.12"
