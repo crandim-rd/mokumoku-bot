@@ -8,3 +8,25 @@ authors = [
 dependencies = []
 readme = "README.md"
 requires-python = ">= 3.12"
+
+[tool.ruff.lint]
+# Copied from https://docs.astral.sh/ruff/linter/#rule-selection
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+# Disable rules that conflict with format
+# ref. https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+ignore = ["E111", "E114", "E117"]
+
