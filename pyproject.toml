@@ -16,6 +16,9 @@ dev-dependencies = [
     "pre-commit>=3.7.1",
 ]
 
+[tool.rye.scripts]
+start_bot = { cmd = "python -m src.main", env-file = ".env" }
+
 [tool.ruff.lint]
 # Copied from https://docs.astral.sh/ruff/linter/#rule-selection
 select = [
