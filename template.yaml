@@ -5,8 +5,10 @@ Parameters:
     Type: String
   OviceClientSecret:
     Type: String
+    NoEcho: true
   SlackWebhookApi:
     Type: String
+    NoEcho: true
 
 Resources:
   BotFunction:
