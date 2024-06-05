@@ -1,0 +1,30 @@
+Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  OviceClientId:
+    Type: String
+  OviceClientSecret:
+    Type: String
+    NoEcho: true
+  SlackWebhookApi:
+    Type: String
+    NoEcho: true
+
+Resources:
+  BotFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: main.lambda_handler
+      Runtime: python3.12
+      CodeUri: src
+      Environment:
+        Variables:
+          OVICE_CLIENT_ID: !Ref OviceClientId
+          OVICE_CLIENT_SECRET: !Ref OviceClientSecret
+          SLACK_WEBHOOK_API: !Ref SlackWebhookApi
+      Events:
+        CloudWatchEvent:
+          Type: ScheduleV2
+          Properties: # 5分ごとに実行
+            ScheduleExpression: cron(0/5 * * * ? *)
+            State: ENABLED
