@@ -6,10 +6,8 @@ import datetime
 import json
 import os
 import sys
-import time
 import urllib.parse
 import urllib.request
-from time import sleep
 from urllib.error import HTTPError
 
 GET_HOLIDAYS_API = "https://holidays-jp.github.io/api/v1/date.json"
@@ -147,6 +145,9 @@ def lambda_handler(event, context):
 
 
 if __name__ == "__main__":
+    import time
+    from time import sleep
+
     for _ in range(5):
         start_time = time.time()
         lambda_handler(None, None)
